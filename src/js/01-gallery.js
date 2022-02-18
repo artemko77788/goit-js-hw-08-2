@@ -1,16 +1,15 @@
 // Change code below this line
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 
-import "simplelightbox/dist/simple-lightbox.min.css";
-import { galleryItems } from "./gallery-items";
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import { galleryItems } from './gallery-items';
 
 // console.log(galleryItems);
 
-const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector('.gallery');
 const pictureMarkap = createGallery(galleryItems);
 
-gallery.insertAdjacentHTML("beforeend", pictureMarkap);
-gallery.addEventListener("click", onPictureClick);
+gallery.insertAdjacentHTML('beforeend', pictureMarkap);
 
 function createGallery(picture) {
   return picture
@@ -19,18 +18,11 @@ function createGallery(picture) {
   <img class="gallery__image" src="${preview}" alt="${description}" />
 </a>`;
     })
-    .join("");
+    .join('');
 }
 
-function onPictureClick(event) {
-  event.preventDefault();
-  if (!event.target.classList.contains("gallery__image")) {
-    return;
-  }
-}
-
-new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
   captionDelay: 250,
-  fadeSpeed: 170
+  fadeSpeed: 170,
 });
